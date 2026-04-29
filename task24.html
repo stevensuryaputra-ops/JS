@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var pilihan_user;
+    var pilihan_komp;
+    var angka_acak;
+    var skor_user;
+    var skor_komp;
+
+    skor_user = 0;
+    skor_komp = 0;
+
+    for(var i = 1; i <= 3; i++) {
+        pilihan_user = prompt('Ronde ' + i + ' - Pilih: batu, gunting, atau kertas ?');
+        angka_acak = Math.floor(Math.random() * 3);       
+        if (angka_acak == 0) {
+            pilihan_komp = 'batu';
+        } else if (angka_acak == 1) {
+            pilihan_komp = 'gunting';
+        } else {
+            pilihan_komp = 'kertas';
+        }
+
+        if (pilihan_user == pilihan_komp) {
+            console.log('User ' + pilihan_user + ' Vs Computer ' + pilihan_komp + ' = draw');
+        } else if (
+            (pilihan_user == 'batu' && pilihan_komp == 'gunting') ||
+            (pilihan_user == 'gunting' && pilihan_komp == 'kertas') ||
+            (pilihan_user == 'kertas' && pilihan_komp == 'batu')
+        ) {
+            console.log('User ' + pilihan_user + ' Vs Computer ' + pilihan_komp + ' = User Wins');
+            skor_user += 1;
+        } else {
+            console.log('User ' + pilihan_user + ' Vs Computer ' + pilihan_komp + ' = Computer Wins');
+            skor_komp += 1;
+        }
+    }
+
+    console.log(''); 
+
+    if (skor_user > skor_komp) {
+        console.log('User wins the game !');
+    } else if (skor_komp > skor_user) {
+        console.log('Computer wins the game !');
+    } else {
+        console.log('The game is a draw !');
+    }
+</script>
+
+</body>
+</html>

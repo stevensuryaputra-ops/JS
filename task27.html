@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+function hello(pesan, times) {
+    for (var i = 1; i <= times; i++) {
+        console.log(pesan);
+    }
+}
+
+var input_kata;
+var input_jumlah;
+
+input_kata = prompt('Masukkan kata yang ingin ditampilkan : ');
+input_jumlah = prompt('Masukkan jumlah perulangan : ');
+
+hello(input_kata, input_jumlah);
+</script>
+
+</body>
+</html>

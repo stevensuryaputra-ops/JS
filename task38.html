@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<table border="0" cellpadding="8">
+    <tr>
+        <th colspan="2"><h3>Create Account</h3></th>
+    </tr>
+    <tr>
+        <td><input id="firstName" type="text" placeholder="First Name"></td>
+        <td><input id="lastName" type="text" placeholder="Last Name"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <select id="country" style="width: 100%; padding: 3px;">
+                <option value="">Select Country</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Singapore">Singapura</option>
+                <option value="Malaysia">Malaysia</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><input id="email" type="text" placeholder="Email Address"></td>
+        <td><input id="phone" type="text" placeholder="Phone Number"></td>
+    </tr>
+    <tr>
+        <td><input id="password" type="password" placeholder="Password"></td>
+        <td><input id="confirmPassword" type="password" placeholder="Confirm Password"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input id="terms" type="checkbox"> <label>Terms and Condition</label>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            <button onclick="createAccount()" style="background-color: #2b6cb0; color: white; padding: 8px 30px; border: none; cursor: pointer;">Create</button>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<p id="result"></p>
+
+<script type="text/javascript">
+function createAccount() {
+    var fname = document.getElementById("firstName").value;
+    var lname = document.getElementById("lastName").value;
+    var country = document.getElementById("country").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var pass = document.getElementById("password").value;
+    var confPass = document.getElementById("confirmPassword").value;
+    var terms = document.getElementById("terms").checked;
+
+    var statusPassword;
+    if (pass == confPass && pass != "") {
+        statusPassword = "Password sama dengan Confirm Password";
+    } else {
+        statusPassword = "Password tidak sama dengan Confirm Password";
+    }
+
+    var statusTerms;
+    if (terms == true) {
+        statusTerms = "Dicentang (Setuju)";
+    } else {
+        statusTerms = "Tidak Dicentang";
+    }
+
+    var hasil = "<b>Data Akun Baru:</b><br><br>" +
+                "First Name : " + fname + "<br>" +
+                "Last Name : " + lname + "<br>" +
+                "Country : " + country + "<br>" +
+                "Email Address : " + email + "<br>" +
+                "Phone Number : " + phone + "<br>" +
+                "Terms & Condition : " + statusTerms + "<br><br>" +
+                "<b>Keterangan : </b>" + statusPassword;
+
+    document.getElementById("result").innerHTML = hasil;
+}
+</script>
+
+</body>
+</html>

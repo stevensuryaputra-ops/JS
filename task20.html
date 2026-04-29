@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var x;
+
+    for(var y = 1; y <= 3; y++) {
+        x = prompt('Masukkan nama pokemon ke-' + y + ' : ');
+
+        if (x == 'pikachu' || x == 'raichu' || x == 'elekid') {
+            console.log(x + ' termasuk kategori: Electric type pokemon');
+        } else if (x == 'squirtle' || x == 'lapras' || x == 'greninja') {
+            console.log(x + ' termasuk kategori: Water type pokemon');
+        } else {
+            console.log(x + ' : Kategori pokemon tidak ditemukan dalam data.');
+        }
+    }
+</script>
+
+</body>
+</html>
