@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Dark Mode</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        
+        .dark-theme {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body><br/>
+
+<button onclick="ubahTema()" style="padding: 10px 20px; cursor: pointer;">Ubah Mode Gelap / Terang</button>
+
+<h3>Halo, Dunia!</h3>
+<p>Coba klik tombol di atas untuk mengubah tema halaman ini. Perhatikan bagaimana warna latar belakang dan teks berubah secara bergantian.</p>
+
+<script type="text/javascript">
+    function ubahTema() {
+        document.body.classList.toggle("dark-theme");
+    }
+</script>
+
+</body>
+</html>

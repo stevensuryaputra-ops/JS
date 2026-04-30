@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Digital Clock</title>
+    <style>
+        #layarJam {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: monospace;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body><br/>
+
+    <h3>Jam Saat Ini:</h3>
+    <div id="layarJam">00:00:00</div>
+
+<script type="text/javascript">
+    function jalankanJam() {
+        var waktu = new Date();
+        var jam = waktu.getHours();
+        var menit = waktu.getMinutes();
+        var detik = waktu.getSeconds();
+        if (jam < 10) {
+            jam = "0" + jam;
+        }
+        if (menit < 10) {
+            menit = "0" + menit;
+        }
+        if (detik < 10) {
+            detik = "0" + detik;
+        }
+        var teksWaktu = jam + ":" + menit + ":" + detik;
+        document.getElementById("layarJam").innerHTML = teksWaktu;
+    }
+    jalankanJam();
+    setInterval(jalankanJam, 1000);
+</script>
+
+</body>
+</html>

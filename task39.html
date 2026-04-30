@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Hex Color</title>
+</head>
+<body><br/>
+
+<button onclick="ubahWarna()" style="padding: 10px 20px; cursor: pointer;">Ganti Warna!</button>
+<p>Kode Warna Saat Ini: <b id="kodeHasil">#FFFFFF</b></p>
+
+<script type="text/javascript">
+    var hexArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+    function ubahWarna() {
+        var hexCode = '#';
+        for (var i = 1; i <= 6; i++) {
+            var randomIndex = Math.floor(Math.random() * hexArray.length);
+            
+            hexCode = hexCode + hexArray[randomIndex];
+        }
+
+        document.body.style.backgroundColor = hexCode;
+        document.getElementById("kodeHasil").innerHTML = hexCode;
+    }
+</script>
+
+</body>
+</html>

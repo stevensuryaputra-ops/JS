@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Counter</title>
+    <style>
+        #layarAngka {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body><br/>
+
+    <center>
+        <h3>Penghitung Angka</h3>
+        <div id="layarAngka">0</div>
+        
+        <button onclick="mulai()">Start</button>
+        <button onclick="berhenti()">Stop</button>
+        <button onclick="ulang()">Reset</button>
+    </center>
+
+<script type="text/javascript">
+    var angka = 0;
+    var timer; 
+
+    function mulai() {
+        clearInterval(timer);
+        timer = setInterval(function() {
+            angka++;
+            document.getElementById("layarAngka").innerHTML = angka;
+        }, 1000);
+    }
+
+    function berhenti() {
+        clearInterval(timer);
+    }
+
+    function ulang() {
+        clearInterval(timer);
+        angka = 0;
+        document.getElementById("layarAngka").innerHTML = angka;
+    }
+</script>
+
+</body>
+</html>

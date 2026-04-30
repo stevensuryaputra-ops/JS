@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Image Gallery</title>
+    <style>
+        #gambarLayar {
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body><br/>
+
+    <center>
+        <img id="gambarLayar" src="https://picsum.photos/id/237/400/250" alt="Galeri">
+        <br/>
+        <button onclick="mundur()">Mundur</button>
+        <button onclick="maju()">Maju</button>
+    </center>
+
+<script type="text/javascript">
+    var daftarGambar = [
+        "https://picsum.photos/id/237/400/250",
+        "https://picsum.photos/id/238/400/250",
+        "https://picsum.photos/id/239/400/250",
+        "https://picsum.photos/id/240/400/250"
+    ];
+    var index = 0;
+    function terapkanGambar() {
+        document.getElementById("gambarLayar").src = daftarGambar[index];
+    }
+
+    function maju() {
+        index++;
+        if (index >= daftarGambar.length) {
+            index = 0;
+        }
+        
+        terapkanGambar();
+    }
+    function mundur() {
+        index--;
+        if (index < 0) {
+            index = daftarGambar.length - 1;
+        }
+        terapkanGambar();
+    }
+</script>
+
+</body>
+</html>
